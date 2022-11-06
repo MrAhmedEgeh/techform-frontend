@@ -1,0 +1,9 @@
+.app{
+  background-color: #1f1d2b;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.app > *{
+  height: 100vh;
+}
