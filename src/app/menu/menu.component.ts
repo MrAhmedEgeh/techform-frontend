@@ -8,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class MenuComponent implements OnInit {
   logo:string = `Techform`;
   menu = [
-    {text: "Home",  icon: "home"},
-    {text: "Trending",  icon: "trending_up"},
-    {text: "Articles", icon: "bookmark"},
+    {text: "Home",  icon: "home", active: false},
+    {text: "Trending",  icon: "trending_up", active: true},
+    {text: "Articles", icon: "bookmark", active: false},
   ];
 
   category = [
