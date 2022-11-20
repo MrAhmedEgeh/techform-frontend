@@ -1,16 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, AfterViewInit} from '@angular/core';
 
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss']
 })
-export class MenuComponent implements OnInit {
+export class MenuComponent implements OnInit, AfterViewInit {
+  @ViewChild('test') input!: ElementRef;
+
   logo:string = `Techform`;
   menu = [
-    {text: "Home",  icon: "home", active: false},
-    {text: "Trending",  icon: "trending_up", active: true},
-    {text: "Articles", icon: "bookmark", active: false},
+    {text: "Home",  icon: "home"},
+    {text: "Trending",  icon: "trending_up"},
+    {text: "Articles", icon: "bookmark"},
   ];
 
   category = [
@@ -30,6 +32,14 @@ export class MenuComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+  ngAfterViewInit() {
+    console.log(this.input.nativeElement);
+  }
+  getItemLocation(e:any){
+    console.log(e.currentTarget)
+   let result = e.target.offsetTop - (e.target.offsetHeight) + 5;
+   this.input.nativeElement.style.top = `${result}px`;
   }
 
 }

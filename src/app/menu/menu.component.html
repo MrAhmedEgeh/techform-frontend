@@ -1,8 +1,9 @@
 <div class="menu">
   <div class="logo">{{logo}}</div>
   <div class="menu-list">
+    <div id="special" #test class="active"></div>
     <h5>Menu</h5>
-    <div class="list-item" *ngFor="let item of menu"  [ngClass]="{'active': item.active}">
+    <div class="list-item" *ngFor="let item of menu" (click)="getItemLocation($event)">
       <mat-icon>{{item.icon}}</mat-icon>
       <a href="#">{{item.text}}</a>
     </div>
@@ -10,7 +11,7 @@
   <hr>
   <div class="category-list">
     <h5>Category</h5>
-    <div class="list-item" *ngFor="let item of category">
+    <div class="list-item" *ngFor="let item of category" (click)="getItemLocation($event)">
       <mat-icon>{{item.icon}}</mat-icon>
       <a href="#">{{item.text}}</a>
     </div>
@@ -18,7 +19,7 @@
   <hr>
   <div class="actions-list">
     <h5>Actions</h5>
-    <div class="list-item" *ngFor="let item of actions">
+    <div class="list-item" *ngFor="let item of actions" (click)="getItemLocation($event)">
       <mat-icon>{{item.icon}}</mat-icon>
       <a href="#">{{item.text}}</a>
     </div>
