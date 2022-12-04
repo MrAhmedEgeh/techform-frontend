@@ -37,9 +37,10 @@ export class MenuComponent implements OnInit, AfterViewInit {
     console.log(this.input.nativeElement);
   }
   getItemLocation(e:any){
-    console.log(e.currentTarget)
    let result = e.target.offsetTop - (e.target.offsetHeight) + 5;
    this.input.nativeElement.style.top = `${result}px`;
+   this.input.nativeElement.style.width = `${e.target.parentElement.offsetWidth + 15}px`;
+   console.log(e.target.parentElement.offsetWidth);
   }
 
 }
